@@ -1,0 +1,13 @@
+{
+  "name": "games-automation-stathelper",
+  "version": "1.0.0",
+  "description": "A supporting file for formatting stat data",
+  "main": "./index",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbc/games-automation-stathelper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/bbc/games-automation-stathelper#readme"
+}
