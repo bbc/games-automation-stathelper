@@ -93,8 +93,8 @@ export const formatStatConfig = (
       debugOut(arguments, `bucket to use in stat string: ${stat.bucket}`);
     }
   
-    const setGeneralPlacement = (generalPlacement, screen) => {
-      if (screen === "") {
+    const setGeneralPlacement = (generalPlacement, screenName) => {
+      if (screenName === "") {
         debugOut(arguments, `General placement to use: ${generalPlacement}.page`);
         return `${generalPlacement}.page`;
       } else {
@@ -103,8 +103,8 @@ export const formatStatConfig = (
       }
     };
   
-    const setCountername = (countername, screen) => {
-      if (screen === "") {
+    const setCountername = (countername, screenName) => {
+      if (screenName === "") {
         debugOut(arguments, `General placement to use: ${generalPlacement}.page`)
         return `${countername}.page`;
       } else {
