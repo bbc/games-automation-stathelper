@@ -72,7 +72,7 @@ export const formatStatConfig = (
       }
     };
   
-    const setCountername = (countername, screenName) => {
+    const setCountername = async (countername, screenName) => {
       if (screenName === "") {
         return `${countername}.page`;
       } else {
@@ -86,7 +86,7 @@ export const formatStatConfig = (
       bucketString = `s=${598261}`;
     }
   
-    const counternameString = setCountername(stat.counterName, stat.screenName);
+    const counternameString = await setCountername(stat.counterName, stat.screenName);
     const statString = `[${stat.campaignId}]-[${stat.creationId}]-[${stat.variant}]-[${stat.format}]-[${await generalPlacement(stat.generalPlacement, stat.screenName)}]-[${stat.detailedPlacement}]-[${stat.advertiserId}]-[${stat.url}]`;
     const newStatData = {
       bucket: bucketString,
