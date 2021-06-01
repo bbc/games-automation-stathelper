@@ -64,7 +64,7 @@ export const formatStatConfig = (
       stat.bucket = bucket;
     }
   
-    const generalPlacement = (generalPlacement, screenName) => {
+    const generalPlacement = async (generalPlacement, screenName) => {
       if (screenName === "") {
           return `${generalPlacement}.page`;
       } else {
@@ -87,7 +87,7 @@ export const formatStatConfig = (
     }
   
     const counternameString = setCountername(stat.counterName, stat.screenName);
-    const statString = `[${stat.campaignId}]-[${stat.creationId}]-[${stat.variant}]-[${stat.format}]-[${generalPlacement(stat.generalPlacement, stat.screenName)}]-[${stat.detailedPlacement}]-[${stat.advertiserId}]-[${stat.url}]`;
+    const statString = `[${stat.campaignId}]-[${stat.creationId}]-[${stat.variant}]-[${stat.format}]-[${await generalPlacement(stat.generalPlacement, stat.screenName)}]-[${stat.detailedPlacement}]-[${stat.advertiserId}]-[${stat.url}]`;
     const newStatData = {
       bucket: bucketString,
       stat: statString,
