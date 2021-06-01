@@ -93,7 +93,7 @@ export const formatStatConfig = (
       debugOut(arguments, `bucket to use in stat string: ${stat.bucket}`);
     }
   
-    const setGeneralPlacement = (generalPlacement, screenName) => {
+    const setGeneralPlacement = async (generalPlacement, screenName) => {
       if (screenName === "") {
         debugOut(arguments, `General placement to use: ${generalPlacement}.page`);
         return `${generalPlacement}.page`;
@@ -120,7 +120,7 @@ export const formatStatConfig = (
     }
   
     const counternameString = setCountername(stat.counterName, stat.screenName);
-    const statString = `[${stat.campaignId}]-[${stat.creationId}]-[${stat.variant}]-[${stat.format}]-[${setGeneralPlacement(stat.generalPlacement, stat.screenName)}]-[${stat.detailedPlacement}]-[${stat.advertiserId}]-[${stat.url}]`;
+    const statString = `[${stat.campaignId}]-[${stat.creationId}]-[${stat.variant}]-[${stat.format}]-[${await setGeneralPlacement(stat.generalPlacement, stat.screenName)}]-[${stat.detailedPlacement}]-[${stat.advertiserId}]-[${stat.url}]`;
     const newStatData = {
       bucket: bucketString,
       stat: statString,
