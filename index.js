@@ -1,5 +1,5 @@
-const statHelper = require('./statFormatter.js');
+import { formatStatConfig } from('./statFormatter.js');
 
 module.exports= {
-    statHelper
+    formatStatConfig
 }
