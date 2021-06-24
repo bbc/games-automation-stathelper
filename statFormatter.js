@@ -91,7 +91,7 @@ export const formatStatConfig = (
   const newStatData = {
     bucket: bucketString,
     stat: statString,
-    counterName: `${counternameString}`,
+    counterName: counternameString,
     event: `echo_event=${stat.event}`,
   };
   return newStatData;
